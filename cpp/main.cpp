@@ -24,7 +24,7 @@ int main(int argc, char *argv[]) {
 
     if (!isRunningAsAdmin()) {
         if (QMessageBox::question(nullptr, QObject::tr("Administrator rights required"),
-                                 QObject::tr("The application requires administrator rights. Restart?"),
+                                QObject::tr("The application requires administrator rights. Restart?"),
                                 QMessageBox::Yes | QMessageBox::No) == QMessageBox::Yes) {
             restartAsAdmin();
             return 0;
