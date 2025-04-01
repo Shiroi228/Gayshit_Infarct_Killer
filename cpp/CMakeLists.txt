@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.31.0-rc2)
-project(GaySh VERSION 1.0 LANGUAGES CXX)
+project(Gayshit_Infarct_Killer VERSION 1.0 LANGUAGES CXX)
 
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
@@ -16,8 +16,13 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib")
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib")
 
+set(HEADERS
+    src/mainwindow.hpp
+)
+
 set(SOURCES
     main.cpp
+    src/mainwindow.cpp
 )
 
 set(SRC
@@ -25,7 +30,7 @@ set(SRC
     res
 )
 
-add_executable(${PROJECT_NAME} ${SOURCES})
+add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
 
 target_include_directories(${PROJECT_NAME} PRIVATE ${Qt5Widgets_INCLUDE_DIRS} ${SRC})
 
