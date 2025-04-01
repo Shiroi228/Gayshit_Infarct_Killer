@@ -37,11 +37,12 @@ void MainWindow::sendKeyPress() {
 
 void MainWindow::setupUI() {
     QWidget *centralWidget = new QWidget(this);
-    QVBoxLayout *layout = new QVBoxLayout(centralWidget);
-    QHBoxLayout *hLayout = new QHBoxLayout();
     QPushButton *quit = new QPushButton(tr("Quit"), this);
-
     QLabel *intervalLabel = new QLabel("Interval (ms):", this);
+
+    auto *const layout = new QVBoxLayout(centralWidget);
+    auto *const hLayout = new QHBoxLayout();
+
     intervalSpinBox_->setRange(50, 5000);
     intervalSpinBox_->setValue(1000);
 
