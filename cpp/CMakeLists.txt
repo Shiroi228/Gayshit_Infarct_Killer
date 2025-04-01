@@ -36,4 +36,4 @@ target_include_directories(${PROJECT_NAME} PRIVATE ${Qt5Widgets_INCLUDE_DIRS} ${
 
 target_link_libraries(${PROJECT_NAME} PRIVATE Qt5::Core Qt5::Gui Qt5::Widgets)
 
-set_target_properties(${PROJECT_NAME} PROPERTIES WIN32_EXECUTABLE OFF)
+set_target_properties(${PROJECT_NAME} PROPERTIES WIN32_EXECUTABLE ON)
