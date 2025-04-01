@@ -11,6 +11,7 @@
 #include <QGuiApplication>
 #include <QScreen>
 #include <Windows.h>
+#include <QMessageBox>
 
 class MainWindow : public QMainWindow {
     Q_OBJECT

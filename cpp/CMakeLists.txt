@@ -30,10 +30,19 @@ set(SRC
     res
 )
 
+
 add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
 
 target_include_directories(${PROJECT_NAME} PRIVATE ${Qt5Widgets_INCLUDE_DIRS} ${SRC})
 
 target_link_libraries(${PROJECT_NAME} PRIVATE Qt5::Core Qt5::Gui Qt5::Widgets)
+
+if (WIN32)
+    # Создаём файл ресурсов (app.rc)
+    file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/app.rc "1 24 \"${CMAKE_CURRENT_SOURCE_DIR}/manifest.xml\"\n")
+
+    # Добавляем ресурсы к приложению
+    target_sources(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_BINARY_DIR}/app.rc)
+endif()
 
 set_target_properties(${PROJECT_NAME} PROPERTIES WIN32_EXECUTABLE ON)
