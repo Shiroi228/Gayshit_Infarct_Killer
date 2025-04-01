@@ -4,6 +4,22 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), intervalSpinBox_(
     toggleButton_(new QPushButton(tr("Destroy shit!"), this)), timer_(new QTimer(this)) {
     setupUI();
     setupTimer();
+
+    setWindowFlags(
+        Qt::Tool |
+        Qt::CustomizeWindowHint |
+        Qt::WindowStaysOnTopHint
+    );
+
+    resize(150, 100);
+
+    QScreen *screen = QGuiApplication::primaryScreen();
+    QRect screenGeometry = screen->availableGeometry();
+
+    int x = screenGeometry.right() - width() - 20;
+    int y = screenGeometry.bottom() - height() - 20;
+
+    move(x, y);
 }
 
 void MainWindow::sendKeyPress() {

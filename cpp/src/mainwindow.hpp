@@ -8,6 +8,8 @@
 #include <QLabel>
 #include <QLayout>
 #include <QTimer>
+#include <QGuiApplication>
+#include <QScreen>
 #include <Windows.h>
 
 class MainWindow : public QMainWindow {
